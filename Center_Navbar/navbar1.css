@@ -7,34 +7,41 @@ body {
 }
 
 /* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
 
-.navbar-logo{
+/* Navbar logo */
+.navbar-logo {
     margin-right: 50px;
     padding-bottom: 10px;
 }
-.navbar-logo a{
+
+.navbar-logo a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     font-size: 24px;
-
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar {
-    display: flex;
-    justify-content:center; /* Align items in a row */
-    align-items: center; /* Vertically center items */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the navbar */
-    padding: 20px;
-    background-color: #f5f5f5;
+/* Logo hover effect */
+.navbar-logo a:hover {
+    color: #8a57e6;
+    transform: scale(1.05);
 }
 
 /* Navbar links */
 .navbar-links {
     display: flex;
     list-style: none;
-    gap: 30px; /* Space between the links */
+    gap: 30px;
     margin-top: 10px;
     padding: 0;
 }
@@ -45,17 +52,34 @@ body {
     color: #333;
     font-weight: bold;
     font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-/* Navbar logo */
+/* Hover underline animation for links */
+.navbar-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #8a57e6;
+    transition: width 0.3s ease;
+}
 
+.navbar-links li a:hover {
+    color: #8a57e6;
+}
+
+.navbar-links li a:hover::after {
+    width: 100%;
+}
 
 /* Button styling */
 .navbar-btn {
     display: flex;
 }
-
-
 
 .download-btn:hover {
     background-color: #8a57e6;
